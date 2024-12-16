@@ -1,36 +1,28 @@
 const quizData = [
-    { question: "プログラムの実行に必要な命令の集合を何と言いますか？", answer: "ソフトウェア",hint:"○○ウェア" },
-    { question: "コンピューターに最も基本的な命令を与えるプログラムを何と呼びますか？（カタカナ、正式名所）", answer: "オペレーティングシステム",hint:"OS" },
-    { question: "ウェブページの基本的な構造を定義する言語は何ですか？", answer: "HTML",hint:"H○○○" },
-    { question: "コンピューターが実行するプログラムのコードを何と言いますか？", answer: "ソースコード",hint:"○○○コード" },
-    { question: "インターネット上で通信を行うためのプロトコルは何ですか？", answer: "TCP/IP",hint:"○○○/○○" },
-    { question: "プログラミングにおけるループ処理の一種で、一定回数繰り返すものは何ですか？", answer: "for文" },
-    { question: "コンピューターの演算や論理演算を行う部分はどこですか？", answer: "CPU" },
-    { question: "インターネット上で使用されるIPアドレスはどのような形式ですか？", answer: "IPv4" },
-    { question: "ウェブサイトにアクセスするために使用するプロトコルは何ですか？", answer: "HTTP" },
-    { question: "HTMLのタグで最初に記述する必要があるものは何ですか？", answer: "<!DOCTYPE html>" },
-    { question: "コンピューターに記憶されたデータを長期間保存するためのデバイスは何ですか？", answer: "ハードディスク" },
-    { question: "コンピューターのメモリの中で、最も高速なものは何ですか？", answer: "キャッシュメモリ" },
-    { question: "ユーザーインターフェースにおいて、文字の色やサイズを指定するために使う言語は何ですか？", answer: "CSS" },
-    { question: "コンピューターにおける2進数で、0と1の間でデータを扱う方式は何ですか？", answer: "バイナリ" },
-    { question: "コンピュータープログラムのエラーを発見して修正する作業を何と呼びますか？", answer: "デバッグ" },
-    { question: "コンピューターネットワークで、情報をやりとりするために使われる装置は何ですか？", answer: "ルーター" },
-    { question: "プログラムの中で一度だけ使われる変数のことを何と言いますか？", answer: "ローカル変数" },
-    { question: "HTMLでリンクを作成するタグは何ですか？", answer: "a" },
-    { question: "ソフトウェア開発において、コードを定期的に管理するためのシステムは何ですか？", answer: "バージョン管理" },
-    { question: "コンピュータープログラムの設計に使われる図で、処理の流れを示すものは何ですか？", answer: "フローチャート" },
-    { question: "コンピュータープログラムでデータを一時的に格納するためのメモリは何ですか？", answer: "RAM" },
-    { question: "ウェブサイトで表示される画像の形式として最もよく使われるものは何ですか？", answer: "JPEG" },
-    { question: "インターネット上でドメイン名をIPアドレスに変換するために使うシステムは何ですか？", answer: "DNS" },
-    { question: "コンピューターをネットワークに接続するために必要な識別番号は何ですか？", answer: "IPアドレス" },
-    { question: "インターネット上でメールを送信するためのプロトコルは何ですか？", answer: "SMTP" },
-    { question: "プログラミングにおいて、条件を判定するための命令は何ですか？", answer: "if文" },
-    { question: "OSの中で、最も基本的なシステムリソースを管理する部分は何ですか？", answer: "カーネル" },
-    { question: "ウェブブラウザでURLを入力すると最初にアクセスするサーバーは何ですか？", answer: "ウェブサーバー" },
-    { question: "コンピューターネットワークで、データを送受信するために使われるものは何ですか？", answer: "パケット" },
-    { question: "プログラムの実行時にメモリ領域を動的に割り当てる方法は何ですか？", answer: "ヒープ" },
-    { question: "ネットワーク上で安全にデータをやり取りするためのプロトコルは何ですか？", answer: "HTTPS" },
-    { question: "プログラムの処理が終了したときに表示されるメッセージは何ですか？", answer: "エラーメッセージ" }
+    { question: "コンピューターに最も基本的な命令を与えるプログラムを何と呼びますか？（カタカナ、正式名所）", answer: ["オペレーティングシステム"],hint:"OS" },
+    { question: "ウェブページの基本的な構造を定義する言語は何ですか？", answer: ["HTML","html"],hint:"H○○○" },
+    { question: "インターネット上で通信を行うためのプロトコルは何ですか？", answer: ["TCP/IP","TCPIP","TCP IP","tcp/ip","tcpip","tcp ip"],hint:"○○○/○○" },
+    { question: "プログラミングにおけるループ処理の一種で、一定回数繰り返すものは何ですか？", answer: ["for文","for","FOR","FOR文"],hint:"○○○文" },
+    { question: "コンピューターの演算や論理演算を行う部分はどこですか？", answer: ["CPU"] ,hint:"コンピュータの心臓部分" },
+    { question: "インターネット上で使用されるIPアドレスはどのような形式ですか？", answer: ["IPv4","ipv4","IPv4アドレス","ipv4アドレス"],hint:"これが枯渇しかけています" },
+    { question: "ウェブサイトにアクセスするために使用するプロトコルは何ですか？", answer: ["HTTP","http"],hint:"H○○○" },
+    { question: "HTMLのタグで最初に記述する必要があるものは何ですか？（○○○宣言）", answer: ["DOCTYPE宣言","doctype宣言"] ,hint:"D○○T○○○宣言"},
+    { question: "コンピューターに記憶されたデータを長期間保存するためのデバイスは何ですか？", answer: ["ハードディスク","HDD","SSD","hdd","ssd"],hint:"○○○D" },
+    { question: "コンピューターのメモリの中で、最も高速なものは何ですか？", answer: ["キャッシュメモリ"],hint:"○○ッシュメモリ" },
+    { question: "ユーザーインターフェースにおいて、文字の色やサイズを指定するために使う言語は何ですか？", answer: ["CSS","css"],hint:"C○○" },
+    { question: "コンピューターにおける2進数で、0と1の間でデータを扱う方式は何ですか？", answer: ["バイナリ","バイナリ方式","バイナリデータ"],hint:"バ○○○" },
+    { question: "コンピュータープログラムのエラーを発見して修正する作業を何と呼びますか？", answer: ["デバッグ"],hjnt:"○○ッグ" },
+    { question: "コンピューターネットワークで、情報をやりとりするために使われる装置は何ですか？（経路選択機能を持つ）", answer: ["ルーター","ルータ"],hint:"○○ター" },
+    { question: "プログラムの中で一度だけ使われる変数のことを何と言いますか？", answer: ["ローカル変数"],hint:"○○カル変数" },
+    { question: "HTMLでリンクを作成するタグは何ですか？", answer: ["a","<a>","aタグ"],hint:"○タグ" },
+    { question: "コンピュータープログラムの設計に使われる図で、処理の流れを示すものは何ですか？", answer: ["フローチャート"],hint:"○○○チャート" },
+    { question: "ウェブサイトで表示される画像の形式として最もよく使われるものは何ですか？", answer: ["JPEG","JPG","jpeg","jpg"] ,hint:"J○○○" },
+    { question: "インターネット上でドメイン名をIPアドレスに変換するために使うシステムは何ですか？", answer: ["DNS","dns"] ,hint:"D○○" },
+    { question: "コンピューターをネットワークに接続するために必要な識別番号は何ですか？", answer: ["IPアドレス","ipアドレス"] ,hint:"I○○○○○" },
+    { question: "インターネット上でメールを送信するためのプロトコルは何ですか？", answer: ["SMTP","smtp"],hint:"○○TP" },
+    { question: "プログラミングにおいて、条件を判定するための命令は何ですか？", answer: ["if文","IF文","IF","if"] ,hint:"○○文" },
+    { question: "コンピューターネットワークで、データを送受信するために使われるものは何ですか？", answer: ["パケット"],hint:"○○ット" },
+    { question: "ネットワーク上で安全にデータをやり取りするためのプロトコルは何ですか？", answer: ["HTTPS","https"] ,hint:"H○○○○" },
 ];
 
 let shuffledQuestions, currentQuestionIndex;
@@ -119,24 +111,27 @@ function startTimer() {
 // 答えをチェック
 function handleAnswer(userAnswer) {
     clearInterval(timer);
-    const correctAnswer = shuffledQuestions[currentQuestionIndex].answer;
-    if (userAnswer === correctAnswer) {
+
+    // 正解の配列（小文字で正規化）
+    const correctAnswers = shuffledQuestions[currentQuestionIndex].answer.map(answer => answer.toLowerCase());
+
+    // ユーザーの回答（小文字で正規化）
+    const userAnswerNormalized = userAnswer.trim().toLowerCase();
+
+    // ユーザーの回答が正解のどれかと一致するかをチェック
+    if (correctAnswers.includes(userAnswerNormalized)) {
         feedbackText.textContent = "正解！";
         feedbackText.className = "correct";
         currentPlayer === 1 ? player1Score++ : player2Score++;
     } else {
-        feedbackText.textContent = `不正解！ 正解は「${correctAnswer}」でした。`;
+        feedbackText.textContent = `不正解！ 正解は「${correctAnswers.join(', ')}」でした。`;
         feedbackText.className = "incorrect";
     }
+    
+    // 次の質問に進むために設定
     currentQuestionIndex++;
     currentPlayer = currentPlayer === 1 ? 2 : 1; // プレイヤーを切り替え
-
-    // 「次の問題に進む」ボタンを表示
     nextQuestionButton.style.display = "block";
-    
-    // 回答ボタンを無効化
-    submitButton.disabled = true;
-    hintButton.disabled = true;
 }
 
 // ヒントボタンのイベントリスナー
