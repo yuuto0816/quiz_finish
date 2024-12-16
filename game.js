@@ -132,6 +132,7 @@ function handleAnswer(userAnswer) {
     currentQuestionIndex++;
     currentPlayer = currentPlayer === 1 ? 2 : 1; // プレイヤーを切り替え
     nextQuestionButton.style.display = "block";
+    nextQuestionButton.focus();
 
     // 回答ボタンを無効化
     submitButton.disabled = true;
