@@ -64,8 +64,15 @@ button:hover {
 #quizContainer {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 30px;
+    width:1000px;
+    height:650px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#button_flex{
+    display:flex;
+    gap:30px;
 }
 
 #questionText {
@@ -171,6 +178,24 @@ button:hover {
 
 #forceExitButton:hover {
     background-color: #c0392b;  /* マウスオーバー時に暗くなる */
+}
+
+/* 強制リスタートボタンのスタイル */
+#forceRestartButton {
+    background-color: #3c5ee7;  /* 赤色 */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display:block;
+}
+
+#forceRestartButton:hover {
+    background-color: #3c2bc0;  /* マウスオーバー時に暗くなる */
 }
 
 

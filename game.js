@@ -261,3 +261,15 @@ forceExitButton.addEventListener("click", () => {
     // 「次の問題」ボタンも非表示にする
     nextQuestionButton.style.display = "none"; // 非表示にする
 });
+
+// リスタートボタン
+forceRestartButton.addEventListener("click", () => {
+    player1Score = 0;
+    player2Score = 0;
+    currentQuestionIndex = 0;
+    currentPlayer = 1;
+    shuffledQuestions = quizData.sort(() => Math.random() - 0.5); // クイズ問題をシャッフル
+    quizContainer.style.display = "block";  // クイズ画面を表示
+    resultScreen.style.display = "none";   // 結果画面を非表示
+    loadQuestion(); // 最初の質問を読み込む
+});
