@@ -146,20 +146,21 @@ hintButton.addEventListener("click", () => {
         feedbackText.textContent = `ヒント: ${currentQuestion.hint}`;
         feedbackText.classList.add("hint"); // ヒント用のスタイルを適用
         hintUsed = true; // ヒント使用済みにする
-        hintButton.textContent = "ヒントを非表示にする"; // ボタンの文言を変更
     } else {
         // ヒントを非表示
         feedbackText.textContent = "";
         feedbackText.classList.remove("hint"); // ヒントのスタイルを削除
         hintUsed = false; // ヒント未使用状態に戻す
-        hintButton.textContent = "ヒントを見る"; // ボタンの文言を元に戻す
     }
+    // ヒントボタンの文言を変更せず常に「ヒント」
+    hintButton.textContent = "ヒント"; 
 });
+
 
 // 「次の問題に進む」ボタンのイベントリスナー
 nextQuestionButton.addEventListener("click", () => {
     // 次の問題に進む前にヒントボタンの状態をリセット
-    hintButton.textContent = "ヒントを見る";  // ヒントボタンのテキストを元に戻す
+    hintButton.textContent = "ヒント";  // ヒントボタンのテキストを元に戻す
     feedbackText.textContent = "";  // フィードバックをクリア（ヒントが表示されていた場合も含めて）
     feedbackText.className = "";  // 正解・不正解のクラスもリセット
 
