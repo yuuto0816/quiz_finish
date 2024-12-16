@@ -240,3 +240,24 @@ restartButton.addEventListener("click", () => {
     resultScreen.style.display = "none";   // 結果画面を非表示
     loadQuestion(); // 最初の質問を読み込む
 });
+
+// 「強制終了してトップに戻る」ボタンのイベントリスナーを追加
+const forceExitButton = document.getElementById("forceExitButton");
+
+forceExitButton.addEventListener("click", () => {
+    // クイズ画面を非表示にして、トップ画面に戻す
+    quizContainer.style.display = "none"; // クイズ画面を非表示
+    startScreen.style.display = "block";  // スタート画面を表示
+    resultScreen.style.display = "none"; // 結果画面を非表示
+    
+    // プレイヤー名やスコアなどをリセット
+    player1Input.value = "";
+    player2Input.value = "";
+    player1Score = 0;
+    player2Score = 0;
+    currentQuestionIndex = 0;
+    currentPlayer = 1;
+
+    // 「次の問題」ボタンも非表示にする
+    nextQuestionButton.style.display = "none"; // 非表示にする
+});
