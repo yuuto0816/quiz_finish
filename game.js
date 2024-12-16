@@ -124,7 +124,7 @@ function handleAnswer(userAnswer) {
         feedbackText.className = "correct";
         currentPlayer === 1 ? player1Score++ : player2Score++;
     } else {
-        feedbackText.textContent = `不正解！ 正解は「${correctAnswers.join(', ')}」でした。`;
+        feedbackText.textContent = `不正解！ 正解は「${correctAnswers[0]}」でした。`;
         feedbackText.className = "incorrect";
     }
     
@@ -154,11 +154,16 @@ hintButton.addEventListener("click", () => {
 
 // 「次の問題に進む」ボタンのイベントリスナー
 nextQuestionButton.addEventListener("click", () => {
+    // 次の問題に進む前にヒントボタンの状態をリセット
+    hintButton.textContent = "ヒントを見る";  // ヒントボタンのテキストを元に戻す
+    feedbackText.textContent = "";  // フィードバックをクリア（ヒントが表示されていた場合も含めて）
+    feedbackText.className = "";  // 正解・不正解のクラスもリセット
+
     if (currentQuestionIndex < shuffledQuestions.length) {
-        loadQuestion();
-        nextQuestionButton.style.display = "none"; // ボタンを非表示
+        loadQuestion();  // 新しい問題をロード
+        nextQuestionButton.style.display = "none";  // 「次の問題に進む」ボタンを非表示
     } else {
-        endGame();
+        endGame();  // すべての問題が終わった場合はゲーム終了
     }
 });
 
