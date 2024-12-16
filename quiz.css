@@ -1,0 +1,165 @@
+/* 全体的なスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* グラデーション背景 */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* スタート画面 */
+#startScreen {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1.5rem; /* 文字サイズを大きく */
+    width: 80%; /* 幅を80%に設定 */
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    box-sizing: border-box;
+}
+
+/* ボタン */
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a11cb;
+}
+
+/* クイズ画面 */
+#quizContainer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#questionText {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+#answerInput {
+    padding: 12px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+#feedbackText {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.correct {
+    color: #00ff00;
+}
+
+.incorrect {
+    color: #ff0000;
+}
+
+.hint {
+    font-style: italic;
+    color: #f0e68c;
+}
+
+/* タイマーとプレイヤーターン表示 */
+#timer, #currentPlayer {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+/* 結果画面 */
+#resultScreen {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* スコア更新 */
+#playerScores {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* 次の問題ボタン */
+#nextQuestionButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#nextQuestionButton:hover {
+    background-color: #45a049;
+}
+
+/* トップに戻るボタンのスタイル */
+#goToTopButton {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#goToTopButton:hover {
+    background-color: #e67e22;
+}
+
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    #startScreen {
+        width: 80%;
+    }
+
+    #quizContainer {
+        width: 80%;
+    }
+
+    #resultScreen {
+        width: 80%;
+    }
+}
