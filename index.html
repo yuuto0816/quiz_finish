@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="quiz.css" />
     </head>
     <body>
+        <!-- スタート画面 -->
         <div id="startScreen">
             <h1>対戦型ITクイズ</h1>
             <input
@@ -22,26 +23,25 @@
             <button id="startButton">開始</button>
         </div>
 
+        <!-- クイズ画面 -->
         <div id="quizContainer" style="display: none">
-            <div id="button_flex">
-                <button id="forceExitButton" class="btn">トップに戻る</button>
-                <button id="forceRestartButton" class="btn">最初から</button>
-            </div>
             <h1 id="currentPlayer">プレイヤー1のターン</h1>
             <p id="timer">残り時間: 20秒</p>
             <p id="questionText"></p>
             <input type="text" id="answerInput" placeholder="答えを入力" />
             <button id="submitButton" class="btn">回答</button>
             <button id="hintButton" class="btn">ヒント</button>
-            <p id="feedbackText"></p>
-            <p id="playerScores"></p>
+            <p id="feedbackText"></p> <!-- 回答＆ヒントテキスト -->
+            <p id="playerScores"></p> <!-- スコアテキスト -->
+            <div id="button_flex">
+                <button id="forceExitButton" class="btn">トップに戻る</button>
+            </div>
             <!-- 次の問題へ進むボタン -->
             <button id="nextQuestionButton" class="btn" style="display: none">
                 次の問題へ
             </button>
         </div>
 
-        <!-- 結果画面 -->
         <!-- 結果画面 -->
         <div id="resultScreen" style="display: none">
             <h1>結果発表</h1>

@@ -1,7 +1,8 @@
 /* 全体的なスタイル */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* グラデーション背景 */
+    background: url('game2204.jpg') no-repeat center center fixed; /* 背景画像を指定 */
+    background-size: cover; /* 画像を画面全体に表示 */
     color: white;
     text-align: center;
     margin: 0;
@@ -11,114 +12,157 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+}
+
+/* 背景のアニメーション */
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+    50% { background: linear-gradient(135deg, #2575fc, #6a11cb); }
+    100% { background: linear-gradient(135deg, #6a11cb, #2575fc); }
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 /* スタート画面 */
 #startScreen {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
+    background-color: rgba(29, 20, 58, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* インプットボックス */
 input {
-    padding: 12px;
-    margin: 10px 0;
+    padding: 15px;
+    margin: 15px 0;
     font-size: 1.5rem; /* 文字サイズを大きく */
     width: 80%; /* 幅を80%に設定 */
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
     box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-/* ボタン */
-button{
-    background-color: #2575fc;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+input:focus {
+    border-color: #2575fc;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
+/* 開始ボタン */
 #startButton {
-    display: block; /* ボタンをブロック要素として表示 */
-    width: 30%; /* ボタンの幅もインプットボックスに合わせる */
+    width: 50%;
     margin: 10px auto; /* 上下のマージンを設定し、中央揃えに */
-}
-
-button:hover {
-    background-color: #6a11cb;
 }
 
 /* クイズ画面 */
 #quizContainer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(29, 20, 58, 0.7);
     padding: 30px;
-    width:1000px;
-    height:650px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-#button_flex{
-    display:flex;
-    gap:30px;
-}
-
-#questionText {
-    font-size: 1.5rem;
-    margin: 20px 0;
-}
-
-#answerInput {
-    padding: 12px;
-    margin: 10px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: white;
-}
-
-#feedbackText {
-    font-size: 1.2rem;
+/* タイマーテキスト */
+#timer {
+    font-size: 1.8rem; /* テキストサイズを大きく設定 */
+    font-weight: bold;
+    color: #2575fc;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* テキストの視認性を向上させるシャドウ */
     margin-top: 20px;
 }
 
-.correct {
-    color: #00ff00;
-}
-
-.incorrect {
-    color: #ff0000;
-}
-
-.hint {
-    font-style: italic;
-    color: #f0e68c;
-}
-
-/* タイマーとプレイヤーターン表示 */
-#timer, #currentPlayer {
+/* 質問テキスト */
+#questionText  {
     font-size: 1.5rem;
     margin: 20px 0;
+    font-weight: bold;
+}
+
+/* 回答ボタン */
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    margin-left: 10px; /* ボタンと入力ボックスの間に空白を追加 */
+}
+
+button:hover {
+    background-color: #6a11cb;
+    transform: translateY(-5px); /* ホバー時に上に浮く */
+}
+
+/* 回答＆ヒントテキスト */
+#feedbackText {
+    font-size: 30px; /* テキストサイズを大きく設定 */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* テキストの視認性を向上させるシャドウ */
+    margin-top: 20px;
+}
+
+/* 回答テキスト */
+.incorrect {
+    color: rgb(255, 69, 58);
+    font-weight: bold;
+}
+
+/* ヒントテキスト */
+.hint {
+    color: #f0e68c;
+    font-style: italic;
+}
+
+/* 答えを入力ボックス */
+#answerInput {
+    padding: 15px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 450px; /* 幅を固定に変更 */
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#answerInput:focus {
+    border-color: #2575fc;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* 結果画面 */
 #resultScreen {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(29, 20, 58, 0.7);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -126,90 +170,95 @@ button:hover {
 #playerScores {
     font-size: 1.5rem;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 /* 次の問題ボタン */
 #nextQuestionButton {
-    background-color: #4CAF50;
+    background-color: #f39c12;
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.3rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
+    float: right; /* 右側へ */
 }
 
 #nextQuestionButton:hover {
-    background-color: #45a049;
+    background-color: #e67d22e1;
+    transform: translateY(-5px);
+}
+
+/* トップに戻るボタン（回答中） */
+#forceExitButton {
+    background-color: #ca1f0c; /* 赤色に変更 */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    float: left;
+}
+
+#forceExitButton:hover {
+    background-color: #901507; /* ホバー時の赤色を少し暗く */
+    transform: translateY(-5px);
 }
 
 /* トップに戻るボタンのスタイル */
 #goToTopButton {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    background-color: #d18812;
 }
 
 #goToTopButton:hover {
-    background-color: #e67e22;
+    background-color: #e67d22e1;
 }
 
-/* 強制終了ボタンのスタイル */
-#forceExitButton {
-    background-color: #e74c3c;  /* 赤色 */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display:block;
+/* 結果テキスト */
+#finalResult {
+    font-size: 30px;
+    font-weight: bold;
 }
 
-#forceExitButton:hover {
-    background-color: #c0392b;  /* マウスオーバー時に暗くなる */
-}
-
-/* 強制リスタートボタンのスタイル */
-#forceRestartButton {
-    background-color: #3c5ee7;  /* 赤色 */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display:block;
-}
-
-#forceRestartButton:hover {
-    background-color: #3c2bc0;  /* マウスオーバー時に暗くなる */
-}
-
-
-/* レスポンシブデザイン */
+/* レスポンシブデザイン（小さい画面でサイズ調整） */
 @media (max-width: 768px) {
-    #startScreen {
-        width: 80%;
+    #answerInput {
+        width: 80%; /* 幅を80%に調整（小さい画面でも見やすくする） */
+    }
+    #startScreen, #quizContainer, #resultScreen {
+        width: 90%;
+    }
+    /* 回答＆ヒントテキスト */
+    #feedbackText {
+        font-size: 27px;
+    }
+    /* スコア更新 */
+    #playerScores {
+        font-size: 23px;
+    }
+    /* 結果テキスト */
+    #finalResult {
+        font-size: 25px;
     }
 
-    #quizContainer {
-        width: 80%;
+    h1 {
+        font-size: 2rem;
     }
+}
 
-    #resultScreen {
-        width: 80%;
+@media (max-width: 500px) {
+    /* 質問テキスト */
+    #questionText  {
+        text-align: justify;
+    }
+    /* 回答＆ヒントテキスト */
+    .incorrect {
+        text-align: justify;
     }
 }
