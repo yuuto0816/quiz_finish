@@ -1,28 +1,24 @@
 const quizData = [
-    { question: "コンピューターに最も基本的な命令を与えるプログラムを何と呼びますか？（カタカナ、正式名所）", answer: ["オペレーティングシステム"],hint:"OS" },
-    { question: "ウェブページの基本的な構造を定義する言語は何ですか？", answer: ["HTML","html"],hint:"H○○○" },
-    { question: "インターネット上で通信を行うためのプロトコルは何ですか？", answer: ["TCP/IP","TCPIP","TCP IP","tcp/ip","tcpip","tcp ip"],hint:"○○○/○○" },
-    { question: "プログラミングにおけるループ処理の一種で、一定回数繰り返すものは何ですか？", answer: ["for文","for","FOR","FOR文"],hint:"○○○文" },
-    { question: "コンピューターの演算や論理演算を行う部分はどこですか？", answer: ["CPU"] ,hint:"コンピュータの心臓部分" },
-    { question: "インターネット上で使用されるIPアドレスはどのような形式ですか？", answer: ["IPv4","ipv4","IPv4アドレス","ipv4アドレス"],hint:"これが枯渇しかけています" },
-    { question: "ウェブサイトにアクセスするために使用するプロトコルは何ですか？", answer: ["HTTP","http"],hint:"H○○○" },
-    { question: "HTMLのタグで最初に記述する必要があるものは何ですか？（○○○宣言）", answer: ["DOCTYPE宣言","doctype宣言"] ,hint:"D○○T○○○宣言"},
-    { question: "コンピューターに記憶されたデータを長期間保存するためのデバイスは何ですか？", answer: ["ハードディスク","HDD","SSD","hdd","ssd"],hint:"○○○D" },
-    { question: "コンピューターのメモリの中で、最も高速なものは何ですか？", answer: ["キャッシュメモリ"],hint:"○○ッシュメモリ" },
-    { question: "ユーザーインターフェースにおいて、文字の色やサイズを指定するために使う言語は何ですか？", answer: ["CSS","css"],hint:"C○○" },
-    { question: "コンピューターにおける2進数で、0と1の間でデータを扱う方式は何ですか？", answer: ["バイナリ","バイナリ方式","バイナリデータ"],hint:"バ○○○" },
-    { question: "コンピュータープログラムのエラーを発見して修正する作業を何と呼びますか？", answer: ["デバッグ"],hint:"○○ッグ" },
-    { question: "コンピューターネットワークで、情報をやりとりするために使われる装置は何ですか？（経路選択機能を持つ）", answer: ["ルーター","ルータ"],hint:"○○ター" },
-    { question: "プログラムの中で一度だけ使われる変数のことを何と言いますか？", answer: ["ローカル変数"],hint:"○○カル変数" },
-    { question: "HTMLでリンクを作成するタグは何ですか？", answer: ["a","<a>","aタグ"],hint:"○タグ" },
-    { question: "コンピュータープログラムの設計に使われる図で、処理の流れを示すものは何ですか？", answer: ["フローチャート"],hint:"○○○チャート" },
-    { question: "ウェブサイトで表示される画像の形式として最もよく使われるものは何ですか？", answer: ["JPEG","JPG","jpeg","jpg"] ,hint:"J○○○" },
-    { question: "インターネット上でドメイン名をIPアドレスに変換するために使うシステムは何ですか？", answer: ["DNS","dns"] ,hint:"D○○" },
-    { question: "コンピューターをネットワークに接続するために必要な識別番号は何ですか？", answer: ["IPアドレス","ipアドレス"] ,hint:"I○○○○○" },
-    { question: "インターネット上でメールを送信するためのプロトコルは何ですか？", answer: ["SMTP","smtp"],hint:"○○TP" },
-    { question: "プログラミングにおいて、条件を判定するための命令は何ですか？", answer: ["if文","IF文","IF","if"] ,hint:"○○文" },
-    { question: "コンピューターネットワークで、データを送受信するために使われるものは何ですか？", answer: ["パケット"],hint:"○○ット" },
-    { question: "ネットワーク上で安全にデータをやり取りするためのプロトコルは何ですか？", answer: ["HTTPS","https"] ,hint:"H○○○○" },
+    { question: "プログラムが予期しない状態になったときに発生するエラーを何と呼びますか？", answer: ["例外", "エクセプション", "例外処理"], hint: "E○○○○○○○○" },
+    { question: "ウェブページを構築するために使用されるスタイルシート言語は何ですか？", answer: ["CSS", "css"], hint: "C○○" },
+    { question: "Linuxでスーパーユーザーになるために使用されるコマンドは何ですか？", answer: ["sudo"], hint: "s○○○" },
+    { question: "ドメイン名をIPアドレスに変換する仕組みは何ですか？", answer: ["DNS", "dns"], hint: "D○○" },
+    { question: "プログラミングにおいて、特定の条件を満たすまで繰り返し実行される構造を何と呼びますか？", answer: ["while文", "while", "WHILE", "WHILE文"], hint: "W○○○○文" },
+    { question: "ネットワーク上でデータを暗号化して送信するプロトコルは何ですか？", answer: ["HTTPS", "https"], hint: "H○○○S" },
+    { question: "コンピューターが起動時に基本的なハードウェアの初期化を行うシステムは何ですか？", answer: ["BIOS", "bios"], hint: "B○○○" },
+    { question: "データベースでデータを操作するための言語は何ですか？", answer: ["SQL", "sql"], hint: "S○○" },
+    { question: "IPv4アドレスのビット数は何ビットですか？", answer: ["32ビット", "32bit", "32ビットアドレス"], hint: "2の32乗" },
+    { question: "コンピュータープログラムの繰り返し処理を中断するために使用されるキーワードは何ですか？", answer: ["break", "BREAK"], hint: "b○○○○" },
+    { question: "JavaScriptで文字列を結合するために使用される演算子は何ですか？", answer: ["+", "プラス"], hint: "P○○○" },
+    { question: "Gitでリモートリポジトリから変更を取得するコマンドは何ですか？", answer: ["git pull", "pull"], hint: "P○○○" },
+    { question: "仮想マシンを管理するために使用されるオープンソースソフトウェアは何ですか？", answer: ["VirtualBox", "KVM", "VMware", "Hyper-V"], hint: "V○○○○○○○○" },
+    { question: "ウェブサイトのサーバー応答速度を測定するためのコマンドは何ですか？", answer: ["ping"], hint: "p○○○" },
+    { question: "JavaScriptで条件分岐を行うために使用されるキーワードは何ですか？", answer: ["if", "IF"], hint: "I○" },
+    { question: "Pythonでリストの長さを取得するために使用される関数は何ですか？", answer: ["len", "LEN"], hint: "L○○" },
+    { question: "暗号通信においてSSLを置き換えるために使用される技術は何ですか？", answer: ["TLS", "tls"], hint: "T○○" },
+    { question: "HTTPリクエストでサーバーにリソースを送信する際に使用されるメソッドは何ですか？", answer: ["POST", "post"], hint: "P○○○" },
+    { question: "コンピューターで時間を測定するために使用されるクロックの単位は何ですか？", answer: ["Hz", "ヘルツ"], hint: "H○" },
+    { question: "Pythonで例外処理を行うために使用されるキーワードは何ですか？", answer: ["try", "TRY"], hint: "T○○" }
 ];
 
 let shuffledQuestions, currentQuestionIndex;
@@ -63,7 +59,7 @@ startButton.addEventListener("click", () => {
     player2Name = player2Input.value || "プレイヤー2";
     
     // quizDataをシャッフルして5問選択
-    shuffledQuestions = quizData.sort(() => Math.random() - 0.5).slice(0, 10);
+    shuffledQuestions = quizData.sort(() => Math.random() - 0.5).slice(0, 30);
     
     startScreen.style.display = "none";
     quizContainer.style.display = "block";
@@ -116,7 +112,7 @@ function handleAnswer(userAnswer) {
     const correctAnswers = shuffledQuestions[currentQuestionIndex].answer;
 
     // ユーザーの回答（小文字で正規化）
-    const userAnswerNormalized = userAnswer.trim().toLowerCase();
+    const userAnswerNormalized = userAnswer.trim();
 
     // ユーザーの回答が正解のどれかと一致するかをチェック
     if (correctAnswers.includes(userAnswerNormalized)) {
