@@ -59,7 +59,7 @@ startButton.addEventListener("click", () => {
     player2Name = player2Input.value || "プレイヤー2";
     
     // quizDataをシャッフルして5問選択
-    shuffledQuestions = quizData.sort(() => Math.random() - 0.5).slice(0, 30);
+    shuffledQuestions = quizData.sort(() => Math.random() - 0.5).slice(0, 10);
     
     startScreen.style.display = "none";
     quizContainer.style.display = "block";
