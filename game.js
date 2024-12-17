@@ -11,7 +11,7 @@ const quizData = [
     { question: "コンピューターのメモリの中で、最も高速なものは何ですか？", answer: ["キャッシュメモリ"],hint:"○○ッシュメモリ" },
     { question: "ユーザーインターフェースにおいて、文字の色やサイズを指定するために使う言語は何ですか？", answer: ["CSS","css"],hint:"C○○" },
     { question: "コンピューターにおける2進数で、0と1の間でデータを扱う方式は何ですか？", answer: ["バイナリ","バイナリ方式","バイナリデータ"],hint:"バ○○○" },
-    { question: "コンピュータープログラムのエラーを発見して修正する作業を何と呼びますか？", answer: ["デバッグ"],hjnt:"○○ッグ" },
+    { question: "コンピュータープログラムのエラーを発見して修正する作業を何と呼びますか？", answer: ["デバッグ"],hint:"○○ッグ" },
     { question: "コンピューターネットワークで、情報をやりとりするために使われる装置は何ですか？（経路選択機能を持つ）", answer: ["ルーター","ルータ"],hint:"○○ター" },
     { question: "プログラムの中で一度だけ使われる変数のことを何と言いますか？", answer: ["ローカル変数"],hint:"○○カル変数" },
     { question: "HTMLでリンクを作成するタグは何ですか？", answer: ["a","<a>","aタグ"],hint:"○タグ" },
@@ -113,7 +113,7 @@ function handleAnswer(userAnswer) {
     clearInterval(timer);
 
     // 正解の配列（小文字で正規化）
-    const correctAnswers = shuffledQuestions[currentQuestionIndex].answer.map(answer => answer.toLowerCase());
+    const correctAnswers = shuffledQuestions[currentQuestionIndex].answer;
 
     // ユーザーの回答（小文字で正規化）
     const userAnswerNormalized = userAnswer.trim().toLowerCase();
@@ -132,6 +132,7 @@ function handleAnswer(userAnswer) {
     currentQuestionIndex++;
     currentPlayer = currentPlayer === 1 ? 2 : 1; // プレイヤーを切り替え
     nextQuestionButton.style.display = "block";
+    nextQuestionButton.focus(); // 「次の問題」ボタンにフォーカスを当てる
 
     // 回答ボタンを無効化
     submitButton.disabled = true;
@@ -235,7 +236,7 @@ restartButton.addEventListener("click", () => {
     player2Score = 0;
     currentQuestionIndex = 0;
     currentPlayer = 1;
-    shuffledQuestions = quizData.sort(() => Math.random() - 0.5); // クイズ問題をシャッフル
+    shuffledQuestions = quizData.sort(() => Math.random() - 0.5).slice(0, 10); // クイズ問題をシャッフル
     quizContainer.style.display = "block";  // クイズ画面を表示
     resultScreen.style.display = "none";   // 結果画面を非表示
     loadQuestion(); // 最初の質問を読み込む
